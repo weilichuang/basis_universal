@@ -10601,6 +10601,25 @@ namespace basist
 		return 0;
 	}
 
+	//webgl支持的格式
+	const char* basis_get_webgl_format_name(transcoder_texture_format fmt)
+	{
+		switch (fmt)
+		{
+		case transcoder_texture_format::cTFETC1_RGB: return "etc1.ktx";
+		case transcoder_texture_format::cTFETC2_RGBA: return "etc2.ktx";
+		case transcoder_texture_format::cTFBC1_RGB: return "dxt1.ktx";
+		case transcoder_texture_format::cTFBC3_RGBA: return "dxt3.ktx";
+		case transcoder_texture_format::cTFPVRTC1_4_RGB: return "pvr.ktx";
+		case transcoder_texture_format::cTFPVRTC1_4_RGBA: return "pvr.ktx";
+		default:
+			assert(0);
+			BASISU_DEVEL_ERROR("basis_get_webgl_format_name: Invalid fmt\n");
+			break;
+		}
+		return "";
+	}
+
 	const char* basis_get_format_name(transcoder_texture_format fmt)
 	{
 		switch (fmt)

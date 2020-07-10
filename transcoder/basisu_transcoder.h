@@ -107,6 +107,9 @@ namespace basist
 	// Returns format's name in ASCII
 	const char* basis_get_format_name(transcoder_texture_format fmt);
 
+	// Returns format's name in ASCII
+	const char* basis_get_webgl_format_name(transcoder_texture_format fmt);
+
 	// Returns true if the format supports an alpha channel.
 	bool basis_transcoder_format_has_alpha(transcoder_texture_format fmt);
 
